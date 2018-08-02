@@ -613,10 +613,10 @@ export default class Scrollbars extends Component {
             ),
             cloneElement(
                 renderTrackVertical({ style: trackVerticalStyle }),
-                { key: 'trackVertical', ref: (ref) => { this.trackVertical = ref; } },
+                { key: 'trackVertical', ref: (ref) => { this.trackVertical = ref; } , onMouseDown: props.onMouseDown },
                 cloneElement(
                     renderThumbVertical({ style: thumbVerticalStyleDefault }),
-                    { ref: (ref) => { this.thumbVertical = ref; } }
+                    { ref: (ref) => { this.thumbVertical = ref; }, onMouseDown: props.onMouseDown  }
                 )
             )
         ]);
