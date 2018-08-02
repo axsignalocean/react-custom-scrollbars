@@ -610,6 +610,7 @@ export default class Scrollbars extends Component {
 Scrollbars.propTypes = {
     onScroll: PropTypes.func,
     onScrollFrame: PropTypes.func,
+    onMouseDown: PropTypes.func,
     onScrollStart: PropTypes.func,
     onScrollStop: PropTypes.func,
     onUpdate: PropTypes.func,
