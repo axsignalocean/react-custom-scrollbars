@@ -287,7 +287,6 @@ export default class Scrollbars extends Component {
     }
 
     handleHorizontalTrackMouseDown(event) {
-        event.preventDefault();
         const { target, clientX } = event;
         const { left: targetLeft } = target.getBoundingClientRect();
         const thumbWidth = this.getThumbHorizontalWidth();
@@ -296,7 +295,6 @@ export default class Scrollbars extends Component {
     }
 
     handleVerticalTrackMouseDown(event) {
-        event.preventDefault();
         const { target, clientY } = event;
         const { top: targetTop } = target.getBoundingClientRect();
         const thumbHeight = this.getThumbVerticalHeight();
@@ -305,7 +303,6 @@ export default class Scrollbars extends Component {
     }
 
     handleHorizontalThumbMouseDown(event) {
-        event.preventDefault();
         this.handleDragStart(event);
         const { target, clientX } = event;
         const { offsetWidth } = target;
@@ -314,7 +311,6 @@ export default class Scrollbars extends Component {
     }
 
     handleVerticalThumbMouseDown(event) {
-        event.preventDefault();
         this.handleDragStart(event);
         const { target, clientY } = event;
         const { offsetHeight } = target;
