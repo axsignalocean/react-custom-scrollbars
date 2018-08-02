@@ -600,7 +600,7 @@ export default class Scrollbars extends Component {
         return createElement(tagName, { ...props, style: containerStyle, ref: (ref) => { this.container = ref; } }, [
             cloneElement(
                 renderView({ style: viewStyle }),
-                { key: 'view', ref: (ref) => { this.view = ref; } },
+                { key: 'view', ref: (ref) => { this.view = ref; }},
                 children
             ),
             cloneElement(
@@ -613,10 +613,10 @@ export default class Scrollbars extends Component {
             ),
             cloneElement(
                 renderTrackVertical({ style: trackVerticalStyle }),
-                { key: 'trackVertical', ref: (ref) => { this.trackVertical = ref; } , onMouseDown: props.onMouseDown },
+                { key: 'trackVertical', ref: (ref) => { this.trackVertical = ref; }, onMouseDown: props.onMouseDown },
                 cloneElement(
                     renderThumbVertical({ style: thumbVerticalStyleDefault }),
-                    { ref: (ref) => { this.thumbVertical = ref; }, onMouseDown: props.onMouseDown  }
+                    { ref: (ref) => { this.thumbVertical = ref; }, onMouseDown: props.onMouseDown }
                 )
             )
         ]);
