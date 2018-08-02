@@ -287,35 +287,51 @@ export default class Scrollbars extends Component {
     }
 
     handleHorizontalTrackMouseDown(event) {
+        event.preventDefault();
         const { target, clientX } = event;
         const { left: targetLeft } = target.getBoundingClientRect();
         const thumbWidth = this.getThumbHorizontalWidth();
         const offset = Math.abs(targetLeft - clientX) - thumbWidth / 2;
         this.view.scrollLeft = this.getScrollLeftForOffset(offset);
+        if (this.props.onMouseDown) {
+            this.props.onMouseDown()
+        }
     }
 
     handleVerticalTrackMouseDown(event) {
+        event.preventDefault();
         const { target, clientY } = event;
         const { top: targetTop } = target.getBoundingClientRect();
         const thumbHeight = this.getThumbVerticalHeight();
         const offset = Math.abs(targetTop - clientY) - thumbHeight / 2;
         this.view.scrollTop = this.getScrollTopForOffset(offset);
+        if (this.props.onMouseDown) {
+            this.props.onMouseDown()
+        }
     }
 
     handleHorizontalThumbMouseDown(event) {
+        event.preventDefault();
         this.handleDragStart(event);
         const { target, clientX } = event;
         const { offsetWidth } = target;
         const { left } = target.getBoundingClientRect();
         this.prevPageX = offsetWidth - (clientX - left);
+        if (this.props.onMouseDown) {
+            this.props.onMouseDown()
+        }
     }
 
     handleVerticalThumbMouseDown(event) {
+        event.preventDefault();
         this.handleDragStart(event);
         const { target, clientY } = event;
         const { offsetHeight } = target;
         const { top } = target.getBoundingClientRect();
         this.prevPageY = offsetHeight - (clientY - top);
+        if (this.props.onMouseDown) {
+            this.props.onMouseDown()
+        }
     }
 
     setupDragging() {
