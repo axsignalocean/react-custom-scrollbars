@@ -65,6 +65,7 @@ export default class Scrollbars extends Component {
         this.handleScroll = this.handleScroll.bind(this);
         this.handleDrag = this.handleDrag.bind(this);
         this.handleDragEnd = this.handleDragEnd.bind(this);
+        this.addListeners = this.addListeners.bind(this);
 
         this.state = {
             didMountUniversal: false
