@@ -294,7 +294,7 @@ export default class Scrollbars extends Component {
         const offset = Math.abs(targetLeft - clientX) - thumbWidth / 2;
         this.view.scrollLeft = this.getScrollLeftForOffset(offset);
         if (this.props.onMouseDown) {
-            this.props.onMouseDown()
+            this.props.onMouseDown();
         }
     }
 
@@ -306,7 +306,7 @@ export default class Scrollbars extends Component {
         const offset = Math.abs(targetTop - clientY) - thumbHeight / 2;
         this.view.scrollTop = this.getScrollTopForOffset(offset);
         if (this.props.onMouseDown) {
-            this.props.onMouseDown()
+            this.props.onMouseDown();
         }
     }
 
@@ -318,7 +318,7 @@ export default class Scrollbars extends Component {
         const { left } = target.getBoundingClientRect();
         this.prevPageX = offsetWidth - (clientX - left);
         if (this.props.onMouseDown) {
-            this.props.onMouseDown()
+            this.props.onMouseDown();
         }
     }
 
@@ -330,7 +330,7 @@ export default class Scrollbars extends Component {
         const { top } = target.getBoundingClientRect();
         this.prevPageY = offsetHeight - (clientY - top);
         if (this.props.onMouseDown) {
-            this.props.onMouseDown()
+            this.props.onMouseDown();
         }
     }
 
