@@ -224,11 +224,15 @@ export default class Scrollbars extends Component {
         trackVertical.addEventListener('mousedown', this.handleVerticalTrackMouseDown);
         thumbHorizontal.addEventListener('mousedown', (event) => {
             this.handleHorizontalThumbMouseDown(event);
-            this.props.onMouseDown(); // function passed by user
+            if (this.props.onMouseDown) {
+                this.props.onMouseDown(); // function passed by user
+            }
         });
         thumbVertical.addEventListener('mousedown', (event) => {
             this.handleVerticalThumbMouseDown(event);
-            this.props.onMouseDown(); // function passed by user
+            if (this.props.onMouseDown) {
+                this.props.onMouseDown(); // function passed by user
+            }
         });
         window.addEventListener('resize', this.handleWindowResize);
     }
