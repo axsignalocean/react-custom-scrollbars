@@ -600,12 +600,12 @@ export default class Scrollbars extends Component {
         return createElement(tagName, { ...props, style: containerStyle, ref: (ref) => { this.container = ref; } }, [
             cloneElement(
                 renderView({ style: viewStyle }),
-                { key: 'view', ref: (ref) => { this.view = ref; }},
+                { key: 'view', ref: (ref) => { this.view = ref; } },
                 children
             ),
             cloneElement(
                 renderTrackHorizontal({ style: trackHorizontalStyle }),
-                { key: 'trackHorizontal', ref: (ref) => { this.trackHorizontal = ref; }, onMouseDown: props.onMouseDown  },
+                { key: 'trackHorizontal', ref: (ref) => { this.trackHorizontal = ref; }, onMouseDown: props.onMouseDown },
                 cloneElement(
                     renderThumbHorizontal({ style: thumbHorizontalStyleDefault }),
                     { ref: (ref) => { this.thumbHorizontal = ref; }, onMouseDown: props.onMouseDown }
